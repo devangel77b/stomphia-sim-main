@@ -1,0 +1,91 @@
+\documentclass{amsart}
+
+
+%% Don't edit this part!
+% For revision control
+\usepackage{rcs-multi}
+\rcsid{$Id$}
+\rcsid{$Header$}
+\rcskwsave{$Author$}
+\rcskwsave{$Date$} 
+\rcskwsave{$Revision$}
+%%\rcsRegisterAuthor{devangel}{Dennis Jos{\'e} Evangelista}
+\rcsRegisterAuthor{devangel}{Dennis J. Evangelista}
+\rcsRegisterAuthor{wxy}{WANG Xiaoyu}
+
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage{makeidx} % incompatible with ams art
+\usepackage{siunitx}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+% PDF metadata
+\usepackage{hyperref}
+\hypersetup{pdftitle={Applied math main event: solving for vorticity}}
+\hypersetup{pdfauthor={Xiaoyu Wang and Dennis Evangelista}}
+\hypersetup{pdfsubject={biology}}
+\hypersetup{pdfkeywords={biomechanics, applied math, vorticity, diffusion, finite difference method, nonlinear, immersed boundary}}
+\hypersetup{colorlinks=true,citecolor=Violet,linkcolor=Blue,urlcolor=Red}
+
+
+
+
+
+
+
+
+\title{Applied math main event: solving for vorticity}
+\author{Xiaoyu Wang and Dennis Evangelista}
+\address{Department of Integrative Biology, UC Berkeley}
+\email{devangel@berkeley.edu}
+\thanks{}
+\date{\today}
+
+\begin{document}
+\begin{abstract}
+Notes on the main thing. 
+\end{abstract}
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+We wish to model the vorticity equation in a non rotating frame, after \cite{Kundu:2004, Worf:2392}:
+\begin{equation}
+\left[\frac{\partial}{\partial t} + \vec{u}\cdot\nabla \right] \vec\omega = \nu \nabla^2 \vec\omega + (\vec\omega\cdot\nabla) \vec{u} + \dot\omega_{gen}
+\label{eq:vorticity}
+\end{equation}
+The first term on the right hand side of equation~\ref{eq:vorticity} is the diffusion of vorticity due to viscosity.  The second term represents the change of vorticity due to vortex stretching and tilting.  The third term represents the creation of vorticity at the immersed boundary of the body.  Far from the body at $\vec{x}=\infty$, we have as boundary condition $\vec\omega = 0$.
+
+We will model the flow as two-dimensional.  The vorticity equations are then:
+\begin{equation}
+\end{equation}
+
+The oral disk is modified as an ellipse immersed in the flow and moving with prescribed heave, surge, and pitch:
+\begin{equation}
+\end{equation}
+
+This results in a vorticity source term of:
+\begin{equation}
+??
+\end{equation}
+
+\section{Numerical methods}
+\subsection{Discretization in space}
+\subsection{Discretization in time}
+\subsection{Integration method}
+
+\section{Results}
+\subsection{Flow prediction}
+\subsection{Parameter regions and fluttering card modes?}
+
+\section{Discussion}
+\subsection{Physical explanation}
+\subsection{Biological significance}
+
+
+% AMS style references
+\bibliographystyle{amsplain}
+\bibliography{references/main}
+\end{document}
